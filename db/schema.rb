@@ -10,9 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_02_18_145224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.string "review"
+    t.integer "rating"
+    t.bigint "user_id"
+    t.bigint "cabin_id"
+    t.date "check_in"
+    t.date "check_out"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "number_of_people"
+    t.index ["cabin_id"], name: "index_bookings_on_cabin_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "cabins", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "rating"
+    t.integer "daily_rate"
+    t.integer "max_people"
+    t.string "picture"
+    t.boolean "kitchen"
+    t.boolean "lake"
+    t.boolean "hot_water"
+    t.boolean "wifi"
+    t.boolean "available"
+    t.string "address"
+    t.boolean "beach"
+    t.boolean "mountain"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cabins_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
+    t.boolean "owner"
+    t.string "email"
+    t.string "description"
+    t.string "profile_pic"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "bookings", "cabins"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "cabins", "users"
 end
