@@ -1,0 +1,10 @@
+<h1>All the cabins displayed here</h1>
+
+
+<ul>
+  <% @cabins.each do |cabin| %>
+    <li>
+      <%= cabin.name %> - <%= cabin.max_people %> peoples - rating <%= cabin.rating %> <%= link_to "show me the cabin ", cabin_path(cabin) %>
+    </li>
+  <% end %>
+</ul>
