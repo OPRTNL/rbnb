@@ -1,5 +1,5 @@
 class CabinsController < ApplicationController
-  before_action :setcabin, only: [:show, :edit, :update, :destroy]
+  before_action :set_cabin, only: [:show, :edit, :update, :destroy]
 
   def index
     @cabins = Cabin.all
@@ -24,9 +24,8 @@ class CabinsController < ApplicationController
   end
 
   def show
-    @cabins_city_1 = Cabin.where(:city == "Ubud")
-    @cabins_city_2 = Cabin.where(:city == "Oslo")
-    @cabins_city_3 = Cabin.where(:city != "Oslo" && :city != "Ubud")
+    @cabin = Cabin.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
