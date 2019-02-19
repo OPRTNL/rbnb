@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: :show
 
-  resources :user, only: :show do
+  resources :users, only: :show do
     resources :owned_cabins
   end
 
