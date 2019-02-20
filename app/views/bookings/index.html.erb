@@ -1,0 +1,8 @@
+<h1><%= current_user.first_name %>'s bookings</h1>
+
+
+<ul>
+  <% @bookings.each do |booking| %>
+  <li><%= booking.cabin.name %> from <%= booking.check_in %> to <%= booking.check_out %> <%= link_to "See the cabin", cabin_path(booking.cabin) %> </li>
+  <% end %>
+</ul>
