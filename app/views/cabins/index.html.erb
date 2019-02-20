@@ -1,5 +1,46 @@
-<h1>All the cabins displayed here</h1>
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <img src="https://image.flaticon.com/icons/png/512/36/36383.png" alt="logo">
+  </a>
 
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Sign up</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Sign in</a>
+
+    <!-- Profile picture with dropdown list -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">My bookings</a></li>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<!-- Dropdown appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">My bookings</a></li>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<h2>Voyagez dans le monde entier avec Cab&b</h2>
+<hr>
+<p>Saisissez les dates et le nombre de voyageurs pour voir le prix total par nuit. Des taxes de séjour peuvent s'ajouter.</p>
+<hr>
 
 <ul>
   <% @cabins.each do |cabin| %>
