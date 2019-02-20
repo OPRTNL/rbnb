@@ -1,13 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
-Cabin.destroy_all
+
 Booking.destroy_all
+Cabin.destroy_all
+User.destroy_all
 
 user_1 = User.create!(first_name: "Laurent", last_name: "Korvisy", email: "laurent.korvisy@gmail.com", phone_number:"0631233432", description: "Hello ! I'm Lauren", owner: false, profile_pic: "https://images.pexels.com/photos/211050/pexels-photo-211050.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", password: "lknd2kd1" )
 user_2 = User.create!(first_name: "Thomas", last_name: "Morin", email: "thomas.morin@gmail.com", phone_number:"0631263432", description: "Hello ! I'm Thomas", owner: false, profile_pic: "https://images.pexels.com/photos/1121359/pexels-photo-1121359.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", password: "lknd2kdf" )
@@ -35,10 +29,4 @@ Booking.create!(user: user_2, cabin: cabin_6, review: "5", rating: "4", number_o
 Booking.create!(user: user_2, cabin: cabin_7, review: "4", rating: "5", number_of_people: "4", check_in: "08/04/2019", check_out: "12/04/2019")
 Booking.create!(user: user_3, cabin: cabin_8, review: "3", rating: "4", number_of_people: "2", check_in: "15/05/2019", check_out: "20/05/2019")
 Booking.create!(user: user_4, cabin: cabin_9, review: "4", rating: "4", number_of_people: "3", check_in: "20/07/2019", check_out: "30/07/2019")
-
-
-
-
-
-
 
