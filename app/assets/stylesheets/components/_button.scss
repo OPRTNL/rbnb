@@ -1,0 +1,15 @@
+.btn-cabin {
+  color: white;
+  padding: 15px 25px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #6AD58B;
+  transition: background 0.3s ease;
+}
+
+.btn-cabin:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+  color: white;
+}
