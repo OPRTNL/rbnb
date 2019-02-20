@@ -23,13 +23,6 @@
   <%= f.label :password_confirmation, "Confirm Password" %>
   <%= f.password_field :password_confirmation %>
   <br>
-  <div class="form-group">
-    <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
-      <div class="col-sm-6">
-        <%= f.file_field :avatar %>
-      </div>
-    </div>
-  <br>
   <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
 <% end %>
 </div>
