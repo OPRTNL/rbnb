@@ -19,4 +19,23 @@
 
 <br/>
 <%= link_to "back to list", cabins_path %>
-<br/><br/><br/><br/><br/>
+<br/>
+
+<h3> Réserver <%= @cabin.name %> </h3>
+
+  <%= simple_form_for [@cabin, @booking] do |f| %>
+coucou
+    <%= f.input :check_in %>
+    <%= f.input :check_out %>
+
+    <%= f.submit "Book Now " %>
+
+  <% end %>
+
+
+
+
+
+
+
+<br/><br/><br/><br/>
