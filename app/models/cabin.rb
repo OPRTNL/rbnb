@@ -9,10 +9,11 @@ class Cabin < ApplicationRecord
   validates :capacity, presence: true
 
   def rating
-    ratings = []
-    @cabin.bookings do |booking|
-      ratings << booking.rating
-    end
-    return ratings.sum.fdiv(ratings.length)
+  ratings = []
+  bookings.each do |booking|
+    ratings << booking.rating
+  end
+  p ratings.sum.fdiv(ratings.length)
+  return ratings.sum.fdiv(ratings.length)
   end
 end
