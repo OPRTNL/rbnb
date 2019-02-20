@@ -1,2 +1,145 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <img src="https://image.flaticon.com/icons/png/512/36/36383.png" alt="logo">
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Sign up</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Sign in</a>
+
+    <!-- Profile picture with dropdown list -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">My bookings</a></li>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">My bookings</a></li>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <!-- Banner ici les amis -->
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://static1.squarespace.com/static/530abf26e4b091b1a795087c/t/5513311fe4b00dcc4cb10d35/1427321128201/Teak-House-Bathroom2.jpg?format=2500w);">
+  <div class="container">
+    <h1>The best experience for a<strong> cosy</strong> log <strong>cabin getaway</strong>!</h1>
+    <p>The World's Coolest Log Cabin Rentals.</p>
+    <a class="btn btn-flat" href="#">Book now</a>
+  </div>
+</div>
+
+  <!-- Les cards -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card-trip">
+  <img src="https://images.pexels.com/photos/950058/pexels-photo-950058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+  <div class="card-trip-infos">
+    <div>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+  </div>
+</div>
+<div class="card-trip">
+    </div>
+    <div class="col">
+      <div class="card-trip">
+  <img src="https://images.pexels.com/photos/950058/pexels-photo-950058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+  <div class="card-trip-infos">
+    <div>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+  </div>
+</div>
+<div class="card-trip">
+    </div>
+    <div class="col">
+      <div class="card-trip">
+  <img src="https://images.pexels.com/photos/950058/pexels-photo-950058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+  <div class="card-trip-infos">
+    <div>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+  </div>
+</div>
+<div class="card-trip">
+    </div>
+  </div>
+</div>
+
+
+  <!-- Footer -->
+
+    <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 info">
+                    <h5>Information</h5>
+                    <p> Lorem ipsum dolor amet, consectetur adipiscing elit. Etiam consectetur aliquet aliquet. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+                </div>
+            </div>
+        </div>
+        <div class="second-bar">
+           <div class="container">
+                <h2 class="logo"><a href=""> LOGO </a></h2>
+                <div class="social-icons">
+                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
