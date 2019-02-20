@@ -17,10 +17,11 @@ class BookingsController < ApplicationController
   def create
     @cabin = Cabin.find(params[:cabin_id])
     @booking = Booking.new(booking_params)
+    @booking.check_in > @booking.check_out ? raise : true
     @booking.user = current_user
     @booking.cabin = @cabin
     @booking.save!
-    redirect_to user_owned_booking(@booking)
+    redirect_to user_bookings_path(current_user)
   end
 
   def edit
