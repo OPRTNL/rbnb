@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :bookings, only: :show
 
   resources :user, only: :show do
-    resources :owned_cabins
+    resources :cabins
   end
 
 
