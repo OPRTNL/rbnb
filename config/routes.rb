@@ -13,13 +13,10 @@ Rails.application.routes.draw do
 
   resources :bookings, only: :show
 
-# <<<<<<< HEAD
+
   resources :users, only: [:show, :edit, :update] do
     resources :owned_cabins
-# =======
-#   resources :user, only: :show do
-#     resources :cabins
-# >>>>>>> master
+
   end
 
 

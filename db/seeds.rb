@@ -1,7 +1,7 @@
 
-User.destroy_all
-Cabin.destroy_all
 Booking.destroy_all
+Cabin.destroy_all
+User.destroy_all
 
 user_1 = User.create!(first_name: "Laurent", last_name: "Korvisy", email: "laurent.korvisy@gmail.com", phone_number:"0631233432", description: "Hello ! I'm Lauren", owner: false, profile_pic: "https://images.pexels.com/photos/211050/pexels-photo-211050.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", password: "lknd2kd1" )
 user_2 = User.create!(first_name: "Thomas", last_name: "Morin", email: "thomas.morin@gmail.com", phone_number:"0631263432", description: "Hello ! I'm Thomas", owner: false, profile_pic: "https://images.pexels.com/photos/1121359/pexels-photo-1121359.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", password: "lknd2kdf" )
