@@ -16,4 +16,9 @@ class Cabin < ApplicationRecord
   p ratings.sum.fdiv(ratings.length)
   return ratings.sum.fdiv(ratings.length)
   end
+
+  def all_booked_nights
+    # bookings = self.bookings
+    self.bookings.pluck(:check_in, :check_out).map { |b| (b[0]..b[1]).to_a }.flatten.uniq.sort
+  end
 end
