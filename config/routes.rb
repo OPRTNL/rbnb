@@ -16,8 +16,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update] do
     resources :owned_cabins
-    resources :bookings, only: [:show, :index]
   end
 
+  resources :bookings, only: [:index]
 
 end
