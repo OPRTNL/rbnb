@@ -1,6 +1,5 @@
 class Cabin < ApplicationRecord
-  belongs_to :owner, class_name: "User"
-  belongs_to :city
+  belongs_to :owner, class_name: "User", foreign_key: :user_id
   has_many :bookings, dependent: :destroy
   has_many :users, through: :bookings
 
@@ -10,10 +9,11 @@ class Cabin < ApplicationRecord
   validates :capacity, presence: true
 
   def rating
-    ratings = []
-    @cabin.bookings do |booking|
-      ratings << booking.rating
-    end
-    return ratings.sum.fdiv(ratings.length)
+  ratings = []
+  bookings.each do |booking|
+    ratings << booking.rating
+  end
+  p ratings.sum.fdiv(ratings.length)
+  return ratings.sum.fdiv(ratings.length)
   end
 end

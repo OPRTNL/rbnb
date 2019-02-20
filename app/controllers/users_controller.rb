@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   before_action :set_user
 
   def show
@@ -23,4 +24,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :description, :email, :phone_number, :profile_pic)
   end
+
 end
