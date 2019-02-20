@@ -55,6 +55,10 @@ class CabinsController < ApplicationController
 
   private
 
+  def all_booked.nights
+    Cabin.bookings.pluck(:check_in, :check_out).map { |b| (b[0]..b[1]).to_a }.flatten.uniq.sort
+  end
+
   def set_cabin
     @cabin = Cabin.find(params[:id])
   end
