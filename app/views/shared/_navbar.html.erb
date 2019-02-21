@@ -10,7 +10,25 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <!-- Become host with dropdown menu -->
+      <div class="dropdown">
+          <a class="navbar-wagon-item navbar-wagon-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+          Become host
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to "#" do %>
+                <%= t(".learn", default: "Learn more") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <%= t(".create", default: "Create your cabin") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+        <!-- Other links -->
       <%= link_to "Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
