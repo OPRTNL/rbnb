@@ -1,0 +1,9 @@
+<%= form_tag search_cabins_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a cabin"
+  %>
+<% end %>
+
+

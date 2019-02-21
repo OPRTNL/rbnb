@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'top'
       get 'destination'
       get 'capacity'
+      get 'search'
     end
   end
 

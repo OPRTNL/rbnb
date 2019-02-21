@@ -9,6 +9,14 @@ class CabinsController < ApplicationController
     @top_cabins = Cabin.where(:rating >= 4.5)
   end
 
+  def search
+    if params[:query].present?
+      @cabins = Cabin.search_by_name_description_and_localisation(params[:query])
+    else
+      @cabins = Cabin.all
+    end
+  end
+
   def capacity
     @cabins_capacity_1 = Cabin.where(:capacity == 1)
     @cabins_capacity_2 = Cabin.where(:capacity == 2)
