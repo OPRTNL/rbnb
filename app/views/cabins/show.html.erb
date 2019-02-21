@@ -16,6 +16,13 @@
 <br/> <%= @cabin.mountain %>
 <br/> <%= @cabin.user_id %>
 
+<h3>Reviews from <%= @cabin.name %></h3>
+<ul>
+<% @bookings.each do |booking| %>
+<li><%= booking.review %></li>
+<% end %>
+</ul>
+
 
 <br/>
 <%= link_to "back to list", cabins_path %>

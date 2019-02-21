@@ -16,11 +16,17 @@ class BookingsController < ApplicationController
   def create
     @cabin = Cabin.find(params[:cabin_id])
     @booking = Booking.new(booking_params)
-    @booking.check_in > @booking.check_out ? raise : true
-    @booking.user = current_user
-    @booking.cabin = @cabin
-    @booking.save!
-    redirect_to user_bookings_path(current_user)
+    abooking_count = @cabin.bookings.where("check_out < ? OR check_in > ?", @booking.check_in, @booking.check_out).count
+    allbooking_count = @cabin.bookings.count
+    if abooking_count != allbooking_count
+      raise
+    else
+      @booking.check_in > @booking.check_out ? raise : true
+      @booking.user = current_user
+      @booking.cabin = @cabin
+      @booking.save!
+      # redirect_to user_bookings_path(current_user)
+    end
   end
 
   def edit
@@ -46,3 +52,5 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:check_in, :check_out)
   end
 end
+
+# Booking.where(:check_out < aa.check_in || :check_in > aa.check_out).count
