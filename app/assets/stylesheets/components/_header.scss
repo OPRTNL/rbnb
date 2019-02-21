@@ -1,0 +1,120 @@
+
+
+#hero {
+  padding: 150px 0;
+  background-image: url("https://static1.squarespace.com/static/530abf26e4b091b1a795087c/t/5513311fe4b00dcc4cb10d35/1427321128201/Teak-House-Bathroom2.jpg?format=2500w");
+  background-position: center;
+  display: inline;
+  float: left;
+  width: 100%;
+  position: relative;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  h2, h1, p{
+  color: white;
+  text-align: center
+}
+.btn-cabin {
+  position: center
+}
+}
+
+#hero:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  opacity: 0.84;
+  width: 100%;
+  z-index: 10;
+}
+
+.hero-area {
+  display: inline;
+  float: left;
+  position: relative;
+  z-index: 99;
+  width: 100%;
+}
+
+.hero-top {
+  display: inline;
+  float: left;
+  width: 100%;
+  padding: 25px 0;
+}
+
+.hero-featured-area {
+  display: inline;
+  float: left;
+  padding: 60px 0 150px;
+  width: 100%;
+}
+
+.hero-featured-content {
+  display: inline;
+  float: right;
+  margin-top: 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-featured-content h1 {
+  font-size: 45px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+
+.hero-featured-content p {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: 1px;
+}
+
+.hero-featured-content h2 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+.book-now-btn {
+  display: inline-block;
+  border: 1px solid #fff;
+  background-color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  margin-top: 30px;
+}
+
+.scrolldown-area {
+  display: inline;
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+
+.scrolldown {
+  font-size: 40px;
+  color: #fff;
+  display: inline-block;
+  margin-top: 50px;
+}
+
+.scrolldown:hover,
+.scrolldown:focus {
+  color: #fff;
+}
