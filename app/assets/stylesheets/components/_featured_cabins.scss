@@ -1,0 +1,76 @@
+#featured-cabins {
+  background-color: #fff;
+  float: left;
+  padding: 100px 0;
+  display: inline;
+  width: 100%;
+}
+
+.featured-cabins-area {
+  display: inline;
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+
+.featured-cabins-area h2 {
+  color: #333;
+}
+
+.title-content {
+  padding: 0 10%;
+}
+
+.featured-cabins-content {
+  display: inline;
+  float: left;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.featured-cabins-single {
+  background-color: #f8f8f8;
+  display: inline;
+  float: left;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.featured-cabins-single-info {
+  display: inline;
+  float: left;
+  position: relative;
+  width: 100%;
+  padding: 20px 10px;
+}
+
+.featured-cabins-single h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.featured-cabins-single h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.price-tag {
+  position: absolute;
+  bottom: 25px;
+  left: 15px;
+  color: #333;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.featured-cabins-single p {
+  font-size: 15px;
+}
+
+.featured-cabins-single-info .book-now-btn {
+  margin-top: 10px;
+  font-size: 15px;
+  text-transform: capitalize;
+  float: right;
+}
