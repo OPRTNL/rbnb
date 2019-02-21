@@ -1,13 +1,21 @@
+<header id="hero">
+  <div class="container">
 
-<h2>Voyagez dans le monde entier avec Cab&b</h2>
-<hr>
-<p>Saisissez les dates et le nombre de voyageurs pour voir le prix total par nuit. Des taxes de séjour peuvent s'ajouter.</p>
-<hr>
+    <div class="hero-area">
+      <div class="hero-top">
+        <h2>Voyagez dans le monde entier avec Cabin&b </h2>
+        <p>Saisissez les dates et le nombre de voyageurs pour voir le prix total par nuit. Des taxes de séjour peuvent s'ajouter..</p>
+      </div>
+    </div>
+
+  </div>
+</header>
+
 
 <div class="container">
   <div class="cards">
   <% @cabins.each do |cabin| %>
-    <div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cabin.picture %>');">
         <div class="card-description">
         <%= cabin.name %>

@@ -1,0 +1,35 @@
+
+#about {
+  background-color: #fff;
+  display: inline;
+  float: left;
+  width: 100%;
+}
+
+.about-area {
+  display: inline;
+  float: left;
+  padding: 100px 0;
+  width: 100%;
+}
+
+.about-left {
+  display: inline;
+  float: left;
+  width: 100%;
+}
+
+.about-right {
+  display: inline;
+  float: left;
+  margin-top: 35px;
+  width: 130%;
+  background-color: #fff;
+  padding: 40px;
+  margin-left: -175px;
+  box-shadow: 3px 1px 18px -9px #000;
+}
+
+.about-right p {
+  font-size: 15px;
+}
