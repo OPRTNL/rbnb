@@ -1,5 +1,16 @@
 
   <%= simple_form_for @cabin do |f| %>
+
+    <% if @cabin.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @cabin.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
     <%= f.input :name %>
     <%= f.input :picture %>
     <%= f.input :city %>

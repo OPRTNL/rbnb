@@ -14,18 +14,23 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @cabin = Cabin.find(params[:cabin_id])
-    @booking = Booking.new(booking_params)
-    abooking_count = @cabin.bookings.where("check_out < ? OR check_in > ?", @booking.check_in, @booking.check_out).count
-    allbooking_count = @cabin.bookings.count
-    if abooking_count != allbooking_count
-      raise
+    if current_user.nil?
+      redirect_to cabin_path(Cabin.find(params[:cabin_id])), :flash => { error: "Please register to book a cabin" }
     else
-      @booking.check_in > @booking.check_out ? raise : true
-      @booking.user = current_user
-      @booking.cabin = @cabin
-      @booking.save!
-      redirect_to bookings_path
+      @cabin = Cabin.find(params[:cabin_id])
+      @booking = Booking.new(booking_params)
+      if book_ok?
+        if book_valid?
+          @booking.user = current_user
+          @booking.cabin = @cabin
+          @booking.save
+          redirect_to bookings_path
+        else
+        redirect_to cabin_path(@cabin), :flash => { error: "Invalid dates" }
+        end
+      else
+        redirect_to cabin_path(@cabin), :flash => { error: "The cabin is already booked on these dates please try again" }
+      end
     end
   end
 
@@ -43,6 +48,14 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def book_valid?
+    @booking.check_in < @booking.check_out
+  end
+
+  def book_ok?
+    @cabin.bookings.count == @cabin.bookings.where("check_out < ? OR check_in > ?", @booking.check_in, @booking.check_out).count
+  end
 
   def set_booking
     @booking = Booking.find(params[:id])

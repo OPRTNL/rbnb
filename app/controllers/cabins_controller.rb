@@ -36,8 +36,11 @@ class CabinsController < ApplicationController
   def create
     @cabin = Cabin.new(cabin_params)
     @cabin.user = current_user
-    @cabin.save!
-    redirect_to cabins_path
+    if @cabin.save
+      redirect_to cabins_path
+    else
+      render :new
+    end
   end
 
   def edit

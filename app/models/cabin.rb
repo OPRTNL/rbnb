@@ -11,13 +11,11 @@ class Cabin < ApplicationRecord
   def rating
   ratings = []
   bookings.each do |booking|
-    ratings << booking.rating
+    ratings << booking.rating if booking.rating.nil? != true
   end
-  # if ratings.sum.fdiv(ratings.length)
-  #   ratings.sum.fdiv(ratings.length)
-  # else
-  #   "0"
-  # end
+  sum_rating = ratings.sum.fdiv(ratings.length)
+
+  sum_rating.nan? ? "New" : sum_rating
   end
 
   # def all_booked_nights

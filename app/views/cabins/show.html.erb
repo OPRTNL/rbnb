@@ -1,4 +1,6 @@
-
+<% if flash[:error] %>
+  <div class="alert alert-danger text-center" id="flash" role="alert"><%= flash[:error] %></div>
+<% end %>
 
 <h2> <%= @cabin.name %></h2>
 
@@ -31,7 +33,6 @@
 <h3> Réserver <%= @cabin.name %> </h3>
 
   <%= simple_form_for [@cabin, @booking] do |f| %>
-coucou
     <%= f.input :check_in %>
     <%= f.input :check_out %>
 
