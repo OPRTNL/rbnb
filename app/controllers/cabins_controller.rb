@@ -37,7 +37,7 @@ class CabinsController < ApplicationController
     @cabin = Cabin.new(cabin_params)
     @cabin.user = current_user
     @cabin.save!
-    redirect_to user_owned_cabin(@cabin)
+    redirect_to cabins_path
   end
 
   def edit
