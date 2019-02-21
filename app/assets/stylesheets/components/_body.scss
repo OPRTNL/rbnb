@@ -66,3 +66,70 @@ img {
   border: none;
   max-width: 100%;
 }
+
+code {
+  background-color: #ee6e73;
+  border-radius: 2px;
+  color: #fff;
+  padding: 2px 4px;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+pre code {
+  background-color: transparent;
+  color: #333333;
+}
+
+del{
+  text-decoration-color: #ee6e73;
+}
+
+kbd {
+  background-color: #ddd;
+  padding: 4px 6px;
+  border-radius: 2px;
+}
+
+address {
+  line-height: 1.5;
+  padding-left: 10px;
+}
+
+dl dt {
+  font-weight: 700;
+}
+
+dl dd {
+  margin-left: 0;
+}
+
+blockquote {
+  background-color: #f8f8f8;
+  border-radius: 0 4px 4px 0;
+  padding: 5px 15px;
+
+}
+
+blockquote p {
+  margin-top: 10px;
+}
+
+button {
+  padding: 5px 15px;
+  border: none;
+}
+
+button:focus {
+  outline: none;
+  border: none;
+}
+
+iframe {
+  border: none;
+}
