@@ -25,6 +25,7 @@ class CabinsController < ApplicationController
 
   def show
     @cabin = Cabin.find(params[:id])
+    @bookings = @cabin.bookings
     @booking = Booking.new
   end
 
