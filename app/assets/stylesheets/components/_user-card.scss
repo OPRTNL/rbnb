@@ -1,0 +1,62 @@
+.container {
+  margin-top: 35px;
+}
+
+h2 {
+  font-size: 60px;
+}
+
+.red {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .picture {
+    border-radius: 50%;
+    width: 300px;
+    box-shadow: 0px 0px 20px rgba(183, 183, 183, .9);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.green {
+  height: 200px;
+  background-color: green;
+  margin-top: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(183, 183, 183, .7);
+  padding: 30px;
+  width: 100%;
+}
+
+.contact {
+  margin-top: 30px;
+  .center{
+    text-align: center;
+    font-size: 20px;
+    i{
+      padding-right: 15px;
+    }
+  }
+}
+
+.blue {
+  background-color: blue;
+  margin-top: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(183, 183, 183, .7);
+  padding: 30px;
+  h3{
+    text-align: center;
+    font-size: 30px;
+  }
+  p{
+    margin-top: 30px;
+  }
+}
+
+.deconnect {
+  margin-top: 30px;
+}
