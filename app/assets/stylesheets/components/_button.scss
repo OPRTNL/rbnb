@@ -1,40 +1,19 @@
 .btn-cabin {
+
   color: white;
   padding: 15px 25px;
   border-radius: 4px;
   font-weight: bold;
-  background: #6AD58B;
+  background: #AB948F;
   transition: background 0.3s ease;
-  position: relative;
+  position: center;
 }
 
 .btn-cabin:hover {
   opacity: 1;
-  background: #3ac162;
+  background: #70615E;
   text-decoration: none;
   color: white;
-}
-
-.send-msg-btn {
-  color: #555;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-align: center;
-  padding: 16px 24px;
-  margin-top: 10px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  width: 200px;
-  color: #fff;
-  border-radius: 20px;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-.send-msg-btn:hover,
-.send-msg-btn:focus {
-  background-color: #fff;
 }
 
 .menu-btn {
@@ -56,24 +35,11 @@
   border: 2px solid #fff;
 }
 
-.send-msg-btn {
-  color: #555;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-align: center;
-  padding: 16px 24px;
-  margin-top: 10px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  width: 200px;
-  color: #fff;
-  border-radius: 20px;
-  cursor: pointer;
-  text-transform: uppercase;
+.book-now-btn{
+  text-color: #434345;
+  border: 1px solid #434345;
 }
 
-.send-msg-btn:hover,
-.send-msg-btn:focus {
-  background-color: #fff;
+.book-now-btn:hover{
+
 }
