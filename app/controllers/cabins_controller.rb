@@ -14,8 +14,8 @@ class CabinsController < ApplicationController
       {
         lng: cabin.longitude,
         lat: cabin.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { cabin: cabin })
-        # image_url: helpers.asset_url('https://image.flaticon.com/icons/png/512/36/36383.png')
+        infoWindow: render_to_string(partial: "infowindow", locals: { cabin: cabin }),
+        image_url: helpers.asset_url('https://image.flaticon.com/icons/png/512/36/36383.png')
       }
     end
   end
