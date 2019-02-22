@@ -1,3 +1,11 @@
 <strong><%= cabin.name %></strong>
+<p>
 <%= link_to(image_tag(cabin.picture)) %>
 <%= cabin.address %>
+</p>
+<br>
+<%= link_to "See the cabin", cabin_path(cabin), :class => "btn-cabin"%>
+<br>
+<br>
+
+
