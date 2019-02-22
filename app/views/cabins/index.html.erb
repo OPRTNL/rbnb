@@ -1,16 +1,19 @@
-<header id="hero">
+<!-- Start Header -->
+<header id="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://res.cloudinary.com/di985lta5/image/upload/v1550760150/astrology-astronomy-atmosphere-1693085.jpg);">
   <div class="container">
 
     <div class="hero-area">
       <div class="hero-top">
         <h2>Voyagez dans le monde entier avec Cabin&b </h2>
-        <p>Saisissez les dates et le nombre de voyageurs pour voir le prix total par nuit. Des taxes de séjour peuvent s'ajouter..</p>
+        <p>Saisissez les dates et le nombre de voyageurs pour voir le prix total par nuit. Des taxes de séjour peuvent s'ajouter.</p>
       </div>
     </div>
 
   </div>
 </header>
+<!-- Stop Header -->
 
+<!-- Start select form -->
 <%= form_tag cabins_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
@@ -18,22 +21,28 @@
     placeholder: "Find a cabin"
   %>
 <% end %>
+<!-- End select form -->
 
-<div class="container">
-  <div class="cards">
-  <% @cabins.each do |cabin| %>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cabin.picture %>');">
-        <div class="card-description">
-        <%= cabin.name %>
-         </div>
-        <%= cabin.max_people %> peoples - rating <%= cabin.rating %> <%= link_to "show me the cabin", cabin_path(cabin) %>
+<!-- Start card -->
+<section id="featured-cabins">
+  <div class="container">
+    <div class="cards">
+    <% @cabins.each do |cabin| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cabin.picture %>');">
+          <div class="card-description">
+          <%= cabin.name %>
+          </div>
+          <%= cabin.max_people %> peoples - rating <%= cabin.rating %> <%= link_to "show me the cabin", cabin_path(cabin) %>
+        </div>
       </div>
+    <% end %>
     </div>
-  <% end %>
   </div>
-</div>
+</section>
+<!-- End cards -->
 
+<!-- Start MAP -->
 <div
   id="map"
   style="width: 100%;
@@ -41,6 +50,6 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
-
+<!-- End MAP -->
 
 
