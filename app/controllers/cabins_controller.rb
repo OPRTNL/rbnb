@@ -2,7 +2,11 @@ class CabinsController < ApplicationController
   before_action :set_cabin, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cabins = Cabin.all
+    if params[:query].present?
+      @cabins = Cabin.search_by_name_description_and_localisation(params[:query])
+    else
+      @cabins = Cabin.all
+    end
   end
 
   def top

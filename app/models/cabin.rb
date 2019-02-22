@@ -8,6 +8,13 @@ class Cabin < ApplicationRecord
   validates :daily_rate, presence: true
   # validates :capacity, presence: true
 
+  include PgSearch
+  pg_search_scope :search_by_name_description_and_localisation,
+    against: [ :name, :address ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
   def rating
   ratings = []
   bookings.each do |booking|
