@@ -1,7 +1,9 @@
 .banner_bottom {
+  background-attachment: fixed;
+  -webkit-background-size: cover;
   background-size: cover;
-  background-position: center;
-  padding: 150px 0;
+  background-position: center center;
+  padding: 350px 0;
 }
 
 .banner_bottom h1 {
