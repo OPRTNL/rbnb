@@ -14,29 +14,42 @@
 <!-- Stop Header -->
 
 <!-- Start select form -->
-<%= form_tag cabins_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a cabin"
-  %>
-<% end %>
+<section id="featured-cabins">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="featured-cabins-area">
+          <%= form_tag cabins_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find a cabin"
+            %>
+          <% end %>
+        </div>
+      </div>
+    </div>
 <!-- End select form -->
 
 <!-- Start card -->
-<section id="featured-cabins">
-  <div class="container">
-    <div class="cards">
-    <% @cabins.each do |cabin| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cabin.picture %>');">
-          <div class="card-description">
-          <%= cabin.name %>
+    <div class="featured-cabins-content">
+      <div class="row">
+        <% @cabins.each do |cabin| %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="featured-cabins-single">
+              <img src="<%= cabin.picture %>">
+              <div class="featured-cabins-single-info">
+                <h3><%= cabin.city %></h3>
+                <h4><%= cabin.name %></h4>
+                <span class="price-tag"><%= cabin.daily_rate %>€</span>
+                <p><%= cabin.max_people %> peoples</p>
+                <p><%= cabin.description %></p>
+                <a class="book-now-btn" <%= link_to "book now", cabin_path(cabin)%></a>
+              </div>
+            </div>
           </div>
-          <%= cabin.max_people %> peoples - rating <%= cabin.rating %> <%= link_to "show me the cabin", cabin_path(cabin) %>
-        </div>
+        <% end %>
       </div>
-    <% end %>
     </div>
   </div>
 </section>
