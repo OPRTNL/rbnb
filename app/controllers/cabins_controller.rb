@@ -2,19 +2,15 @@ class CabinsController < ApplicationController
   before_action :set_cabin, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cabins = Cabin.all
-  end
-
-  def top
-    @top_cabins = Cabin.where(:rating >= 4.5)
-  end
-
-  def search
     if params[:query].present?
       @cabins = Cabin.search_by_name_description_and_localisation(params[:query])
     else
       @cabins = Cabin.all
     end
+  end
+
+  def top
+    @top_cabins = Cabin.where(:rating >= 4.5)
   end
 
   def capacity
