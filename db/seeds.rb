@@ -3,16 +3,22 @@ Booking.destroy_all
 Cabin.destroy_all
 User.destroy_all
 
+puts "Seeding"
+print "..."
+
 user_1 = User.create!(first_name: "Laurent", last_name: "Korvisy", email: "laurent.korvisy@gmail.com", phone_number:"0631233432", description: "Hello ! I'm Laurent", owner: false, profile_pic: "https://res.cloudinary.com/di985lta5/image/upload/v1550747271/pexels-photo-211050.jpg", password: "lknd2kd1" )
 user_2 = User.create!(first_name: "Thomas", last_name: "Morin", email: "thomas.morin@gmail.com", phone_number:"0631263432", description: "Hello ! I'm Thomas", owner: false, profile_pic: "https://res.cloudinary.com/di985lta5/image/upload/v1550747271/pexels-photo-1121359.jpg", password: "lknd2kdf" )
 user_3 = User.create!(first_name: "Charlotte", last_name: "Goyard", email: "charlotte.goyard@gmail.com", phone_number:"0631256432", description: "Hi ! I'm Charlotte", owner: false, profile_pic: "https://res.cloudinary.com/di985lta5/image/upload/v1550747272/pexels-photo-1239291.jpg", password: "lknd2kdg" )
 user_4 = User.create!(first_name: "Maxime", last_name: "Carneiro", email: "maxime.carneiro@gmail.com", phone_number:"0633433432", description: "Hello ! I'm Maxime", owner: false, profile_pic: "https://res.cloudinary.com/di985lta5/image/upload/v1550747271/pexels-photo-837140.jpg", password: "lknd2kdy" )
 user_5 = User.create!(first_name: "Calvin", last_name: "Ponsot", email: "calvin.ponsot@gmail.com", phone_number:"0631233476", description: "Hello ! I'm Calvin", owner: false, profile_pic: "https://res.cloudinary.com/di985lta5/image/upload/v1550747271/pexels-photo-1182125.jpg", password: "lknd2kdy" )
+print ".."
 user_6 = User.create!(first_name: "Rémi", last_name: "Falcoz", email: "remi.falcoz@gmail.com", phone_number:"0631233456", description: "Hello ! I'm Rémi", owner: false, profile_pic: "https://res.cloudinary.com/di985lta5/image/upload/v1550747271/pexels-photo-1121796.jpg", password: "lknd2kdo" )
 user_7 = User.create!(first_name: "Chloé", last_name: "Rouby", email: "chloe.rouby@gmail.com", phone_number:"0631235678", description: "Hello ! I'm Chloé", owner: false, profile_pic: "https://res.cloudinary.com/di985lta5/image/upload/v1550747517/beautiful-beauty-brown-eyes-1065084.jpg", password: "lknd2kdl" )
 user_8 = User.create!(first_name: "Yasue", last_name: "Nobuyoki", email: "yasue.nobuyoki@gmail.com", phone_number:"0631245673", description: "Hello ! I'm Yasue", owner: true, profile_pic: "https://res.cloudinary.com/di985lta5/image/upload/v1550747272/pexels-photo-1552092.jpg", password: "lknd2kd2" )
 user_9 = User.create!(first_name: "Joe", last_name: "Wayan", email: "joe.wayan@gmail.com", phone_number:"0631569034", description: "Salamat ! I'm Joe", owner: true, profile_pic: "https://res.cloudinary.com/di985lta5/image/upload/v1550747664/adult-beard-blur-1212984.jpg", password: "lknd2kd@" )
 user_10 = User.create!(first_name: "Charlène", last_name: "Haskis", email: "charlene.haskis@gmail.com", phone_number:"0631548709", description: "Hello ! I'm Charlène", owner: true, profile_pic: "https://res.cloudinary.com/di985lta5/image/upload/v1550747272/pexels-photo-324658.jpg", password: "lknd2kd!" )
+
+print "....."
 
 cabin_1 = Cabin.create!(picture: "https://res.cloudinary.com/di985lta5/image/upload/v1550743865/cabin1japansesforesthouse.jpg", capacity: 1, user: user_1, name: "Japanese Forest House", description: "A small cabin made almost exclusively from salvaged materials with traditional Japanese design.", address: "Tochigi Prefecture 321-1415", city: "Nikko", beach: false, mountain: false, wifi: true, kitchen: true, hot_water: true, lake: true, max_people: 2, daily_rate: 90)
 cabin_2 = Cabin.create!(picture: "https://res.cloudinary.com/di985lta5/image/upload/v1550743857/95976045.jpg", capacity: 1, user: user_1, name: "The Retreat", description: "The Retreat offers the most authentic, remote and personalized game viewing experience in Africa’s biggest Game Reserve, a vast and untouched land which is rarely experienced today.", address: "Selous Game Reserve, Tanzanie", city: "Selous", beach: false, mountain: false, wifi: true, kitchen: false, hot_water: true, lake: true, max_people: 4, daily_rate: 120)
@@ -24,9 +30,12 @@ cabin_7 = Cabin.create!(picture: "https://images.pexels.com/photos/91216/pexels-
 cabin_8 = Cabin.create!(picture: "https://www.venuereport.com/uploads/cache/report_image_flex/0_BLOG/Q2_June/GreenVillage/TheVenueReport-GreenVillage-01.jpg", capacity: 4, user: user_5, name: "Bamboo lodge in rice fields", description: "Mynew eco friendly bamboo House provide a private space to enjoy the peacefulness and beauty of Ubud.Just around 10 minutes drive from vivid ubud,mybambo house provide a calm space in the middle of rice field with a waterfall nearby which calming sound can be enjoyed,private house provide a living room to lay back, a large bedroom for a nights rest and open shower with hot and cold water to enjoy the beautiful environment around.free shuttle service to Ubud center and free scooter is available.", address: "Kecamatan Gianyar, Bali, Indonesia", city: "Ubud", beach: false, mountain: false, wifi: true, kitchen: false, hot_water: true, lake: true, max_people: 4, daily_rate: 210)
 cabin_9 = Cabin.create!(picture: "https://static.wixstatic.com/media/816b29_40f160af2aca4db4b2cfa5e397347b81~mv2_d_5760_3840_s_4_2.jpg/v1/fill/w_714,h_476,al_c,q_90,usm_0.66_1.00_0.01/816b29_40f160af2aca4db4b2cfa5e397347b81~mv2_d_5760_3840_s_4_2.webp", capacity: 5, user: user_6, name: "Log cabin in the pine trees", description: "A small cosy log cabin in the nature, by the sea, surrounded by pine trees. Enjoy the stillness, use the sauna, bathe in the fjord and use the yoga room anytime. My recommendation is two persons, but possible with three persons.", address: "Askøy, Hordaland 15", city: "Oslo", beach: true, mountain: true, wifi: true, kitchen: true, hot_water: true, lake: false, max_people: 3, daily_rate: 250)
 
+print "............"
 
 Booking.create!(user: user_2, cabin: cabin_1, review: "5", rating: "4", number_of_people: "2", check_in: "21/04/2019", check_out: "24/04/2019")
 Booking.create!(user: user_2, cabin: cabin_7, review: "4", rating: "5", number_of_people: "4", check_in: "08/04/2019", check_out: "12/04/2019")
+print ".................."
 Booking.create!(user: user_3, cabin: cabin_8, review: "3", rating: "4", number_of_people: "2", check_in: "15/05/2019", check_out: "20/05/2019")
 Booking.create!(user: user_4, cabin: cabin_9, review: "4", rating: "4", number_of_people: "3", check_in: "20/07/2019", check_out: "30/07/2019")
 
+puts "DB seeded sucessfully !"

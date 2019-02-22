@@ -10,6 +10,13 @@ class CabinsController < ApplicationController
       @cabins = Cabin.all
       map_set
     end
+    @markers = @cabins.map do |cabin|
+      {
+        lng: cabin.longitude,
+        lat: cabin.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { cabin: cabin })
+      }
+    end
   end
 
   # def top
