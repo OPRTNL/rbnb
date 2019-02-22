@@ -10,25 +10,15 @@ class CabinsController < ApplicationController
       @cabins = Cabin.all
       map_set
     end
+    @markers = @cabins.map do |cabin|
+      {
+        lng: cabin.longitude,
+        lat: cabin.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { cabin: cabin })
+        # image_url: helpers.asset_url('https://image.flaticon.com/icons/png/512/36/36383.png')
+      }
+    end
   end
-
-  # def top
-  #   @top_cabins = Cabin.where(:rating >= 4.5)
-  # end
-
-  # def capacity
-  #   @cabins_capacity_1 = Cabin.where(:capacity == 1)
-  #   @cabins_capacity_2 = Cabin.where(:capacity == 2)
-  #   @cabins_capacity_3 = Cabin.where(:capacity == 3)
-  #   @cabins_capacity_4 = Cabin.where(:capacity == 4)
-  # end
-
-  # def destination
-  #   @cabins_capacity_1 = Cabin.where(:capacity == 1)
-  #   @cabins_capacity_2 = Cabin.where(:capacity == 2)
-  #   @cabins_capacity_3 = Cabin.where(:capacity == 3)
-  #   @cabins_capacity_4 = Cabin.where(:capacity == 4)
-  # end
 
   def show
     @cabin = Cabin.find(params[:id])
