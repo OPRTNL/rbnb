@@ -3,11 +3,8 @@ class CabinsController < ApplicationController
 
   def index
     if params[:query].present?
-      @cabins = Cabin.search_by_name_description_and_localisation(params[:query]).to_a
-      Cabin.near(params[:query], 1_000).each do |cabin|
-        @cabins << cabin
-      end
-      @cabins.uniq!
+      @cabins = Cabin.search_by_name_description_and_localisation(params[:query])
+      @cabins.empty? ? @cabins = Cabin.all : @cabins.near(params[:query], 1_000)
       map_set
     else
       @cabins = Cabin.all
@@ -15,23 +12,23 @@ class CabinsController < ApplicationController
     end
   end
 
-  def top
-    @top_cabins = Cabin.where(:rating >= 4.5)
-  end
+  # def top
+  #   @top_cabins = Cabin.where(:rating >= 4.5)
+  # end
 
-  def capacity
-    @cabins_capacity_1 = Cabin.where(:capacity == 1)
-    @cabins_capacity_2 = Cabin.where(:capacity == 2)
-    @cabins_capacity_3 = Cabin.where(:capacity == 3)
-    @cabins_capacity_4 = Cabin.where(:capacity == 4)
-  end
+  # def capacity
+  #   @cabins_capacity_1 = Cabin.where(:capacity == 1)
+  #   @cabins_capacity_2 = Cabin.where(:capacity == 2)
+  #   @cabins_capacity_3 = Cabin.where(:capacity == 3)
+  #   @cabins_capacity_4 = Cabin.where(:capacity == 4)
+  # end
 
-  def destination
-    @cabins_capacity_1 = Cabin.where(:capacity == 1)
-    @cabins_capacity_2 = Cabin.where(:capacity == 2)
-    @cabins_capacity_3 = Cabin.where(:capacity == 3)
-    @cabins_capacity_4 = Cabin.where(:capacity == 4)
-  end
+  # def destination
+  #   @cabins_capacity_1 = Cabin.where(:capacity == 1)
+  #   @cabins_capacity_2 = Cabin.where(:capacity == 2)
+  #   @cabins_capacity_3 = Cabin.where(:capacity == 3)
+  #   @cabins_capacity_4 = Cabin.where(:capacity == 4)
+  # end
 
   def show
     @cabin = Cabin.find(params[:id])
@@ -70,11 +67,11 @@ class CabinsController < ApplicationController
   private
 
   def set_cabin
-    @cabin = Cabin.find(params[:id])
+    @cabin = @cabins.find(params[:id])
   end
 
   def map_set
-    @cabins = Cabin.where.not(latitude: nil, longitude: nil)
+    @cabins = @cabins.where.not(latitude: nil, longitude: nil)
 
     @markers = @cabins.map do |cabin|
       {
