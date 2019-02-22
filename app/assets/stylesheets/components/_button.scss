@@ -13,3 +13,66 @@
   text-decoration: none;
   color: white;
 }
+
+.send-msg-btn {
+  color: #555;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 16px 24px;
+  margin-top: 10px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  width: 200px;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.send-msg-btn:hover,
+.send-msg-btn:focus {
+  background-color: #fff;
+}
+
+.menu-btn {
+  position: fixed;
+  right: 15%;
+  top: 50px;
+  color: #fff;
+  font-size: 25px;
+  border: 2px solid #fff;
+  padding: 5px 14px;
+  z-index: 999;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.menu-btn:hover,
+.menu-btn:focus {
+  border: 2px solid #fff;
+}
+
+.send-msg-btn {
+  color: #555;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 16px 24px;
+  margin-top: 10px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  width: 200px;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.send-msg-btn:hover,
+.send-msg-btn:focus {
+  background-color: #fff;
+}
