@@ -4,12 +4,14 @@ class CabinsController < ApplicationController
   def index
     if params[:query].present?
       @cabins = Cabin.search_by_name_description_and_localisation(params[:query]).to_a
-      Cabin.near(params[:query], 1_0000).each do |cabin|
+      Cabin.near(params[:query], 1_000).each do |cabin|
         @cabins << cabin
       end
       @cabins.uniq!
+      map_set
     else
       @cabins = Cabin.all
+      map_set
     end
   end
 
@@ -71,6 +73,16 @@ class CabinsController < ApplicationController
     @cabin = Cabin.find(params[:id])
   end
 
+  def map_set
+    @cabins = Cabin.where.not(latitude: nil, longitude: nil)
+
+    @markers = @cabins.map do |cabin|
+      {
+        lng: cabin.longitude,
+        lat: cabin.latitude
+      }
+    end
+  end
 
   def cabin_params
     params.require(:cabin).permit(:name, :description, :rating, :daily_rate, :max_people, :picture, :kitchen, :lake, :hot_water, :wifi, :available, :address, :beach, :mountain)
