@@ -1,12 +1,12 @@
 .btn-cabin {
-
   color: white;
   padding: 15px 25px;
   border-radius: 4px;
   font-weight: bold;
   background: #AB948F;
   transition: background 0.3s ease;
-  position: center;
+  position: absolute;
+  z-index: 100;
 }
 
 .btn-cabin:hover {
@@ -45,5 +45,7 @@
 }
 
 .button-header{
-  text-align: center
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
