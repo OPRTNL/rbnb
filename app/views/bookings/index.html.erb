@@ -4,7 +4,7 @@
     <p class="intro">Check all your bookings right here.</p>
     <ul>
       <% @bookings.each do |booking| %>
-      <li>
+      <li class="book-card">
         <img class="img-booking" src="<%= booking.cabin.picture %>" alt="booking-img">
         <h3><%= booking.cabin.name %></h3>
         <p class="date-in"><i class="fas fa-calendar-alt"></i><%= booking.check_in %></p>
