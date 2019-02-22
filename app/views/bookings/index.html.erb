@@ -1,8 +1,24 @@
-<h1><%= current_user.first_name %>'s bookings</h1>
+<div class="bookings-container">
+  <div class="list-container">
+    <h1>Your bookings</h1>
+    <p class="intro">Check all your bookings right here.</p>
+    <ul>
+      <% @bookings.each do |booking| %>
+      <li>
+        <img class="img-booking" src="<%= booking.cabin.picture %>" alt="booking-img">
+        <h3><%= booking.cabin.name %></h3>
+        <p class="date-in"><i class="fas fa-calendar-alt"></i><%= booking.check_in %></p>
+        <p>To</p>
+        <p class="date-out"><i class="fas fa-calendar-alt"></i><%= booking.check_out %></p>
+        <span><%= link_to "See the cabin", cabin_path(booking.cabin) %></span>
+      </li>
+      <% end %>
+    </ul>
+    <div class="blank">
+    </div>
+    <div class="redirect">
+      <%= link_to "Book another cabin", cabins_path %>
+    </div>
+  </div>
+</div>
 
-
-<ul>
-  <% @bookings.each do |booking| %>
-  <li><%= booking.cabin.name %> from <%= booking.check_in %> to <%= booking.check_out %> <%= link_to "See the cabin", cabin_path(booking.cabin) %> </li>
-  <% end %>
-</ul>
