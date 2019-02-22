@@ -12,7 +12,7 @@ class Cabin < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_by_name_description_and_localisation,
-    against: [ :name, :address ],
+    against: [ :name, :description ],
     using: {
       tsearch: { prefix: true }
     }
