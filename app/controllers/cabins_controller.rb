@@ -3,7 +3,11 @@ class CabinsController < ApplicationController
 
   def index
     if params[:query].present?
-      @cabins = Cabin.search_by_name_description_and_localisation(params[:query])
+      @cabins = Cabin.search_by_name_description_and_localisation(params[:query]).to_a
+      Cabin.near(params[:query], 1_0000).each do |cabin|
+        @cabins << cabin
+      end
+      @cabins.uniq!
     else
       @cabins = Cabin.all
     end
