@@ -11,14 +11,22 @@
     </div>
   <% end %>
 
-    <%= f.input :name %>
-    <%= f.input :picture %>
-    <%= f.input :city %>
-    <%= f.input :address %>
-    <%= f.input :daily_rate %>
-    <%= f.input :description %>
-    <%= f.input :rating %>
-    <%= f.input :capacity %>
+
+<div class="container-cabin">
+  <div class="form-cabin">
+    <div class="form-intro">
+      <h2>Create your cabin</h2>
+      <p>Suggest your own cabin for other poeple.</p>
+    </div>
+
+    <%= f.input :name, input_html: { class: 'my_class'} %>
+    <%= f.input :picture, input_html: { class: 'my_class'} %>
+    <%= f.input :city, input_html: { class: 'my_class'} %>
+    <%= f.input :address, input_html: { class: 'my_class'} %>
+    <%= f.input :daily_rate, input_html: { class: 'my_class'} %>
+    <%= f.input :description, input_html: { class: 'my_class'} %>
+    <%= f.input :rating, input_html: { class: 'my_class'} %>
+    <%= f.input :capacity, input_html: { class: 'my_class'} %>
     <%= f.input :kitchen %>
     <%= f.input :lake %>
     <%= f.input :hot_water %>
@@ -26,8 +34,8 @@
     <%= f.input :available %>
     <%= f.input :beach %>
     <%= f.input :mountain %>
-
-
     <%= f.submit "add as cabin" %>
-
   <% end %>
+  </div>
+</div>
+
