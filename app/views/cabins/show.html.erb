@@ -2,43 +2,59 @@
   <div class="alert alert-danger text-center" id="flash" role="alert"><%= flash[:error] %></div>
 <% end %>
 
-<h2> <%= @cabin.name %></h2>
+<div class="cabin-container">
+  <div class="cabin-banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(<%= image_url(@cabin.picture)%>); background-position: center; background-size: cover">
+    <h2><%= @cabin.name %></h2>
+    <p><%= @cabin.address %></p>
+    <p><%= @cabin.description %></p>
+  </div>
+  <div class="number">
+    <div>
+      <p class="cabin-title">Daily rate</p>
+      <p class="rates"><%= @cabin.daily_rate %></p>
+    </div>
+    <div>
+      <p class="cabin-title">Cabin rating</p>
+      <p class="rates"><%= @cabin.rating %></p>
+    </div>
+  </div>
+  <div class="features">
+    <div>
+      <p class="cabin-title"><i class="fas fa-utensils"></i><%= "Kitchen" if @cabin.kitchen == true %></p>
+    </div>
+    <div>
+      <p class="cabin-title"><i class="fas fa-water"></i><%= "Lake" if @cabin.lake == true %></p>
+    </div>
+    <div>
+      <p class="cabin-title"><i class="fas fa-tint"></i><%= "Hot water" if @cabin.hot_water == true %></p>
+    </div>
+    <div>
+      <p class="cabin-title"><i class="fas fa-wifi"></i><%= "Wifi" if @cabin.wifi == true %></p>
+    </div>
+    <div>
+      <p class="cabin-title"><i class="fas fa-umbrella-beach"></i><%= "Beach" if @cabin.beach == true %></p>
+    </div>
+    <div>
+      <p class="cabin-title"><i class="fas fa-mountain"></i><%= "Mountain" if @cabin.mountain == true %></p>
+    </div>
+  </div>
+  <div class="resa">
+    <h3> Réserver <%= @cabin.name %> </h3>
 
-<br/> <%= @cabin.daily_rate %>
-<br/> <%= @cabin.description %>
-<br/> <%= @cabin.rating %>
-<br/> <%= @cabin.daily_rate %>
-<br/> <%= @cabin.address %>
-<br/> <%= link_to(image_tag(@cabin.picture)) %>
-<br/> <%= @cabin.kitchen %>
-<br/> <%= @cabin.lake %>
-<br/> <%= @cabin.hot_water %>
-<br/> <%= @cabin.wifi %>
-<br/> <%= @cabin.beach %>
-<br/> <%= @cabin.mountain %>
-<br/> <%= @cabin.user_id %>
+    <%= simple_form_for [@cabin, @booking] do |f| %>
+      <%= f.input :check_in %>
+      <%= f.input :check_out %>
 
-<h3>Reviews from <%= @cabin.name %></h3>
-<ul>
-<% @bookings.each do |booking| %>
-<li><%= booking.review %></li>
-<% end %>
-</ul>
+      <%= f.submit "Book Now " %>
 
+    <% end %>
+  </div>
 
-<br/>
-<%= link_to "back to list", cabins_path %>
-<br/>
+  <br/>
+  <%= link_to "back to list", cabins_path %>
+  <br/>
+</div>
 
-<h3> Réserver <%= @cabin.name %> </h3>
-
-  <%= simple_form_for [@cabin, @booking] do |f| %>
-    <%= f.input :check_in %>
-    <%= f.input :check_out %>
-
-    <%= f.submit "Book Now " %>
-
-  <% end %>
 
 
 
