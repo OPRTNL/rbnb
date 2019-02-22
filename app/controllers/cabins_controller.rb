@@ -67,7 +67,7 @@ class CabinsController < ApplicationController
   private
 
   def set_cabin
-    @cabin = @cabins.find(params[:id])
+    @cabin = Cabin.find(params[:id])
   end
 
   def map_set
