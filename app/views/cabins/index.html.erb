@@ -13,30 +13,38 @@
 </header>
 <!-- Stop Header -->
 
+
 <!-- Start select form -->
-<%= form_tag cabins_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a cabin"
-  %>
-<% end %>
+<section id="featured-cabins">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="featured-cabins-area">
+          <%= form_tag cabins_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a cabin"
+          %>
+          <% end %>
+
 <!-- End select form -->
 
 <!-- Start card -->
-<section id="featured-cabins">
-  <div class="container">
-    <div class="cards">
-    <% @cabins.each do |cabin| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cabin.picture %>');">
-          <div class="card-description">
-          <%= cabin.name %>
+  <div class="featured-cabins-content">
+    <div class="row">
+        <% @cabins.each do |cabin| %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cabin.picture %>');">
+              <div class="card-description">
+              <%= cabin.name %>
+              </div>
+              <%= cabin.max_people %> peoples - rating <%= cabin.rating %> <%= link_to "show me the cabin", cabin_path(cabin) %>
+           </div>
           </div>
-          <%= cabin.max_people %> peoples - rating <%= cabin.rating %> <%= link_to "show me the cabin", cabin_path(cabin) %>
-        </div>
+        <% end %>
+       </div>
       </div>
-    <% end %>
     </div>
   </div>
 </section>
