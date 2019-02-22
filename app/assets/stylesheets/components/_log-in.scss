@@ -1,0 +1,35 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(255, 255, 255, 0.35)), url(https://static1.squarespace.com/static/530abf26e4b091b1a795087c/t/5513311fe4b00dcc4cb10d35/1427321128201/Teak-House-Bathroom2.jpg?format=2500w);
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+.login-card {
+  width: 35%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .7);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  border-radius: 20px;
+  box-shadow: 2px 0px 8px;
+  h2 {
+    line-height: 2;
+  }
+}
+
+.emailstyle {
+  height: 50px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, .9);
+}
+
+.form-actions {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
