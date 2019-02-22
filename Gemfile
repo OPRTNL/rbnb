@@ -18,6 +18,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'carrierwave', '~> 1.2'
 gem 'awesome_print'
+gem 'pg_search'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
